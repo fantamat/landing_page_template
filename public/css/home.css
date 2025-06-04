@@ -1,0 +1,86 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #fdfcf8;
+    color: #333;
+    cursor: default;
+}
+h1, h2, h3, h4, h5, h6, .logo, footer {
+    font-family: 'Georgia', serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #fdfcf8;
+    border-bottom: 1px solid #ddd;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+}
+.logo a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: bold;
+}
+nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: #333;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+nav a:hover {
+    background-color: #f0f0f0;
+}
+.btn {
+    margin-left: 1em;
+    padding: 0.5em 1em;
+    border: 1px solid #333;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #fdfcf8;
+}
+ol {
+    margin: 0;
+    padding-left: 1.5em;
+}
+ol li {
+    margin-bottom: 1em;
+}
+.btn:hover {
+    background-color: #f0f0f0;
+}
+.btn-primary,
+.btn-dark {
+    background-color: #333;
+    color: #fff;
+}
+.btn-primary:hover,
+.btn-dark:hover {
+    background-color: #555;
+}
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+footer {
+    text-align: center;
+    padding: 2em;
+    font-size: 0.9em;
+    color: #666;
+}
+.section-content {
+    max-width: 800px;
+    margin: auto;
+}

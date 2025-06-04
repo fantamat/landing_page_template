@@ -57,3 +57,28 @@ window.addEventListener('scroll', function() {
     bufferBehavior('scroll', 'scrollY:' + window.scrollY);
 }, { passive: true });
 window.addEventListener('beforeunload', sendBufferedBehavior);
+
+
+function changeLanguage(lang) {
+    document.cookie = 'lang=' + lang + '; path=/; max-age=' + (60*60*24*365);
+    location.reload();
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.querySelector('.dropdown-toggle');
+    var menu = document.querySelector('.dropdown-menu');
+    toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+    document.addEventListener('click', function() {
+        menu.style.display = 'none';
+    });
+});
+
+
+function selectClosedBeta() {
+    const betaSelect = document.getElementById('closed_beta');
+    betaSelect.checked = true;
+}

@@ -61,61 +61,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
         $emailMessage = '<p style="color:red;">Invalid email address.</p>';
     }
 }
-
-// INSERT YOUR HTML CODE BELOW
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-        .container { max-width: 400px; margin: 80px auto; background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #333; }
-        form { display: flex; flex-direction: column; gap: 12px; }
-        input[type="email"] { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-        button { padding: 10px; background: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #0056b3; }
-        hr { border: 0; height: 1px; background: #ddd; margin: 32px 0; }
-        section { margin-top: 24px; }
-        blockquote { font-style: italic; color: #555; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome!</h1>
-        <p>Subscribe to our newsletter:</p>
-        <?php echo $emailMessage; ?>
-        <form method="post" action="">
-            <input type="email" name="email" placeholder="Enter your email" required />
-            <button type="submit">Subscribe</button>
-        </form>
-        <hr>
-        <section>
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>Fast and reliable service</li>
-                <li>Trusted by thousands of users</li>
-                <li>24/7 customer support</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Testimonials</h2>
-            <blockquote>"This service changed my life!" – Alex</blockquote>
-            <blockquote>"Highly recommended for everyone." – Jamie</blockquote>
-        </section>
-        <section>
-            <h2>Our Features</h2>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div><strong>Easy to Use:</strong> Simple and intuitive interface.</div>
-                <div><strong>Secure:</strong> Your data is protected with us.</div>
-                <div><strong>Regular Updates:</strong> We keep improving for you.</div>
-            </div>
-        </section>
-    </div>
-    <script src="public/js/behavior.js"></script>
-</body>
-</html>
+<?php
+// Detect language from cookie or Accept-Language header
+$lang = 'en';
+if (isset($_COOKIE['lang']) && in_array($_COOKIE['lang'], ['en', 'cs'])) {
+    $lang = $_COOKIE['lang'];
+} elseif (preg_match('/\bcs\b/i', $language)) {
+    $lang = 'cs';
+}
+
+// Load the appropriate php file
+$phpFile = __DIR__ . "/$lang.php";
+if (!file_exists($phpFile)) {
+    $phpFile = __DIR__ . '/en.php'; // Fallback to English if the specified file doesn't exist
+}
+
+include $phpFile;
+?>

@@ -1,0 +1,259 @@
+
+
+
+#hero > div {
+    display: flex;
+    position: relative;
+}
+#hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+#hero p {
+    font-size: 1.2em;
+    max-width: 600px;
+}
+#hero h2 {
+    text-align: left;
+}
+section {
+    padding: 3em 2em;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+}
+section:nth-of-type(even) {
+    background-color: #f1efe2;
+}
+section:nth-of-type(odd) {
+    background-color: #fdfcf8;
+}
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+.feature-list li {
+    margin-bottom: 1em;
+}
+.contact {
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    padding: 2em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form {
+    background: #fffbe8;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(67,97,238,0.07);
+    padding: 1.5em;
+    margin: 2em auto;
+    max-width: 480px;
+    display: block;
+}
+.form-checkbox {
+    display: flex;
+    background: #f8f9fa;
+    border-radius: 7px;
+    border: 1.5px solid #e9ecef;
+    padding: 0.7em 1em;
+    cursor: pointer;
+    transition: border 0.2s, box-shadow 0.2s;
+    gap: 1em;
+    margin: 0.5em 0;
+}
+.form-checkbox:hover{
+    box-shadow: 0 0 3px 3px #6b8dff;
+}
+.form-checkbox input[type="checkbox"] {
+    display: none;
+}
+/* Modern way: highlight .form-checkbox if its input is checked (requires :has support) */
+.form-checkbox:has(input[type="checkbox"]:checked) {
+    background: #e6f6d6;
+    border-color: #6b8dff;
+    box-shadow: 0 0 2px 2px #9aff35;
+}
+.option-title {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.option-desc {
+    margin-left: auto;
+    color: #6c757d;
+}
+.subscribe-textarea {
+    display: block;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    padding: 0.7em 1em;
+    min-height: 70px;
+    box-sizing: border-box;
+}
+
+/* Features grid container */
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2em 2em;
+    margin: 2em 0 0 0;
+    padding: 0 0.5em;
+    align-items: stretch;
+}
+
+/* Individual feature card */
+.feature-item {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(67,97,238,0.07);
+    padding: 2em 1.2em 1.2em 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    min-height: 200px;
+    position: relative;
+}
+.feature-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(67,97,238,0.13);
+}
+.feature-item img {
+    width: 100%;
+    filter: drop-shadow(0 2px 6px rgba(67,97,238,0.08));
+    font-size: 56px;
+    border-radius: 5px;
+}
+.feature-item h3 {
+    font-size: 1.2em;
+    margin: 0.5em 0 0.3em 0;
+    color: #4361ee;
+}
+.feature-item p {
+    color: #444;
+    margin: 0;
+}
+.step-img {
+    display: block;
+    max-height: 100px;
+        /* border: 1px solid #ddd;
+        border-radius: 8px; */
+    margin: 0 auto;
+}
+
+.how-steps li {
+    align-items: center;
+    list-style-type: none;
+    display: grid;
+}
+.how-steps li label {
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(67,97,238,0.08);     
+    background-color: #fff;
+    padding: 1em;
+    display: block
+}
+.call {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+#tf-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+    width: 70%;
+    margin: 1rem auto;
+    
+    border-color: #4d4037;
+    outline: none;
+    max-width: 400px;
+}
+
+
+.third {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.third > * {
+    flex: 1 1 0;
+}
+
+.third-left {
+    padding: 1rem;
+}
+
+.third-left table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.third-left table th:first-child {
+    border-top-left-radius: 10px;
+}
+.third-left table th:last-child {
+    border-top-right-radius: 10px;
+}
+.third-left table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.third-left table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+.third-left table th, .third-left table td {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.third-left table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.third-left table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+.third-left table td {
+    background-color: #fff;
+}
+.third-left table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.third-right {
+    padding: 1rem;
+    text-align: center;
+}
+
+.third-right li {
+    background-color: #f3fff4;
+    border-radius: 8px;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    box-shadow: 0 3px 6px rgba(67,97,238,0.08);
+    border: 1px solid #000;
+}
